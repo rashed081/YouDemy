@@ -7099,9 +7099,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
-      "projectName": "YourAcademy",
-      "projectPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
+      "projectUniqueName": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.Web.csproj",
+      "projectName": "YourAcademy.Web",
+      "projectPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.Web.csproj",
       "packagesPath": "C:\\Users\\roni\\.nuget\\packages\\",
       "outputPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\obj\\",
       "projectStyle": "PackageReference",
