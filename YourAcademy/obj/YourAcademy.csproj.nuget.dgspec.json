@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy\\YourAcademy.csproj": {}
+    "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj": {}
   },
   "projects": {
-    "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy\\YourAcademy.csproj": {
+    "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
+        "projectUniqueName": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
         "projectName": "YourAcademy",
-        "projectPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
+        "projectPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy.csproj",
         "packagesPath": "C:\\Users\\roni\\.nuget\\packages\\",
-        "outputPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\YourAcademy\\obj\\",
+        "outputPath": "D:\\Onnorokom Project\\YourAcademy\\YourAcademy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roni\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,36 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NHibernate": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "NHibernate.AspNet.Identity": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "autofac": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
