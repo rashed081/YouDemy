@@ -1,1 +1,1 @@
-# YouDemy
+# YourAcademy
