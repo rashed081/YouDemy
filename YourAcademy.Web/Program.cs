@@ -1,7 +1,9 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using log4net;
+using NHibernate;
 using YourAcademy;
+using YourAcademy.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,14 +20,25 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new WebModule());
 });
-
-
 var log = LogManager.GetLogger(typeof(Program));
 
 try
 {
+    // Configure NHibernate
+    builder.Services.AddSingleton(provider =>
+    {
+        return NHibernateHelper.SessionFactory;
+    });
+
+    builder.Services.AddScoped(provider =>
+    {
+        var sessionFactory = provider.GetRequiredService<ISessionFactory>();
+        return sessionFactory.OpenSession();
+    });
+
     var app = builder.Build();
 
+    app.UseMiddleware<NHibernateMiddleware>();
 
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())

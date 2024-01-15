@@ -1,6 +1,6 @@
 ﻿namespace YourAcademy.DAL.Entity
 {
-    public class Course
+    public class Course:IEntity<Guid>
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }

@@ -1,22 +1,36 @@
 ﻿using YourAcademy.DAL;
 using YourAcademy.DAL.Entity;
+using YourAcademy.DAL.UnitOfWork;
 using YourAcademy.Services.Interface;
 
 namespace YourAcademy.Services.Services
 {
-    public class CourseService : ICourseService
+    public class CourseService :ICourseService
     {
-        public Course GetCourse(int id)
+        private readonly IApplicationUnitOfWork _unitOfWork;
+
+        public CourseService(IApplicationUnitOfWork unitOfWork)
         {
-            using (var session = NHibernateHelper.OpenSession())
-            {
-                return session.Get<Course>(id);
-            }
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
-        public List<Course> GetCourses()
+        public void AddCourse(Course course)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _unitOfWork.BeginTransaction();
+                _unitOfWork.Courses.Add(course);
+                _unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
+            finally
+            {
+                _unitOfWork.Dispose();
+            }
         }
     }
 }

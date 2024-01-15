@@ -7,7 +7,7 @@ namespace YourAcademy.DAL.MappingFiles
     {
         public CourseMap()
         {
-            Id(x => x.Id).GeneratedBy.Identity();
+            Id(x => x.Id).GeneratedBy.GuidComb();
             Map(x => x.Title);
             Map(x => x.Description);
             Map(x => x.Price);

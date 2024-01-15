@@ -10,20 +10,26 @@ namespace YourAcademy.DAL
     {
         private static ISessionFactory _sessionFactory;
 
+        public static ISessionFactory SessionFactory
+        {
+            get
+            {
+                if (_sessionFactory == null)
+                {
+                    InitializeSessionFactory();
+                }
+                return _sessionFactory;
+            }
+        }
         public static ISession OpenSession()
         {
-            if (_sessionFactory == null)
-            {
-                InitializeSessionFactory();
-            }
-
-            return _sessionFactory.OpenSession();
+            return SessionFactory.OpenSession();
         }
 
-        private static void InitializeSessionFactory()
+        public static void InitializeSessionFactory()
         {
             _sessionFactory = Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.ConnectionString("Data Source=:memory:;Version=3;New=True;"))
+                .Database(MsSqlConfiguration.MsSql2012.ConnectionString("Server= DESKTOP-SFPAGI6\\SQL16;Database=YourAcademyDb;User Id=sa;Password=1234;"))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CourseMap>())
                 .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
                 .BuildSessionFactory();

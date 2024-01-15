@@ -21,10 +21,6 @@ namespace YourAcademy.Web.Models
             _service = service;
         }
 
-        public Course GetCourse(int id)
-        {
-            return _service.GetCourse(id);
-        }
 
     }
 }

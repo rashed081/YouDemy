@@ -55,6 +55,14 @@
             "NHibernate.AspNet.Identity": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
