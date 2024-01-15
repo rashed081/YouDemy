@@ -1,0 +1,24 @@
+﻿@using YourAcademy.Web.Models
+@model CourseViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Welcome to my website!</h2>
+
+    @if (Model != null)
+    {
+        <p>Course Information:</p>
+        <p>ID: @Model.Id</p>
+        <p>Title: @Model.Title</p>
+        <p>Fees: @Model.Price</p>
+    }
+    else
+    {
+        <p>No person found.</p>
+    }
+</body>
+</html>

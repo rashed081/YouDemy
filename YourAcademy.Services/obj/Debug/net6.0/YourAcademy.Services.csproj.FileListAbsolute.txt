@@ -1,0 +1,16 @@
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.csproj.AssemblyReference.cache
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.AssemblyInfoInputs.cache
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.AssemblyInfo.cs
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.csproj.CoreCompileInputs.cache
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.sourcelink.json
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\bin\Debug\net6.0\YourAcademy.Services.deps.json
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\bin\Debug\net6.0\YourAcademy.Services.dll
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\bin\Debug\net6.0\YourAcademy.Services.pdb
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\bin\Debug\net6.0\YourAcademy.DAL.dll
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\bin\Debug\net6.0\YourAcademy.DAL.pdb
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.csproj.CopyComplete
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.dll
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\refint\YourAcademy.Services.dll
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.pdb
+D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\ref\YourAcademy.Services.dll
