@@ -6,11 +6,11 @@ using YourAcademy.DAL.MappingFiles;
 
 namespace YourAcademy.DAL 
 {
-    public static class NHibernateHelper
+    public class NHibernateHelper : INHibernateHelper
     {
-        private static ISessionFactory _sessionFactory;
+        private ISessionFactory _sessionFactory;
 
-        public static ISessionFactory SessionFactory
+        public ISessionFactory SessionFactory
         {
             get
             {
@@ -21,18 +21,19 @@ namespace YourAcademy.DAL
                 return _sessionFactory;
             }
         }
-        public static ISession OpenSession()
+        public ISession OpenSession()
         {
             return SessionFactory.OpenSession();
         }
 
-        public static void InitializeSessionFactory()
+        public void InitializeSessionFactory()
         {
             _sessionFactory = Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2012.ConnectionString("Server= DESKTOP-SFPAGI6\\SQL16;Database=YourAcademyDb;User Id=sa;Password=1234;"))
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CourseMap>())
-                .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
-                .BuildSessionFactory();
+                 .Database(MsSqlConfiguration.MsSql2012.ConnectionString("Server= DESKTOP-SFPAGI6\\SQL16;Database=YourAcademyDb;User Id=sa;Password=1234;"))
+                 .CurrentSessionContext<NHibernate.Context.WebSessionContext>()
+                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CourseMap>())
+                 .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
+                 .BuildSessionFactory();
         }
     }
 }

@@ -21,6 +21,10 @@ namespace YourAcademy.Web.Models
             _service = service;
         }
 
+        public IList<Course> GetCourses()
+        {
+            return _service.GetAllCourses();
+        }
 
     }
 }

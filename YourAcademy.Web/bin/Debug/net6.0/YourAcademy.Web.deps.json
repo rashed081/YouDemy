@@ -1250,6 +1250,7 @@
       },
       "YourAcademy.DAL/1.0.0": {
         "dependencies": {
+          "Autofac.Extensions.DependencyInjection": "8.0.0",
           "FluentNHibernate": "3.3.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "NHibernate": "5.5.0",

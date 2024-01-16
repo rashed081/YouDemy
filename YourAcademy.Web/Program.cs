@@ -4,6 +4,7 @@ using log4net;
 using NHibernate;
 using YourAcademy;
 using YourAcademy.DAL;
+using YourAcademy.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new WebModule());
+    containerBuilder.RegisterModule(new DataAccessModule());
+    containerBuilder.RegisterModule(new ServiceModule());
 });
 var log = LogManager.GetLogger(typeof(Program));
 
@@ -27,7 +30,8 @@ try
     // Configure NHibernate
     builder.Services.AddSingleton(provider =>
     {
-        return NHibernateHelper.SessionFactory;
+        var nhHelper = provider.GetRequiredService<INHibernateHelper>();
+        return nhHelper.SessionFactory;
     });
 
     builder.Services.AddScoped(provider =>
@@ -37,8 +41,9 @@ try
     });
 
     var app = builder.Build();
+    
+    
 
-    app.UseMiddleware<NHibernateMiddleware>();
 
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())
@@ -52,6 +57,7 @@ try
 
     app.UseRouting();
 
+    app.UseMiddleware<NHibernateMiddleware>();
     app.UseAuthorization();
 
     app.MapControllerRoute(
@@ -63,6 +69,10 @@ try
         pattern: "{controller=Home}/{action=Index}/{id?}");
 
     log.Info("Application is starting");
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers();
+    });
     app.Run();
 
 }

@@ -1,5 +1,4 @@
-﻿using YourAcademy.DAL;
-using YourAcademy.DAL.Entity;
+﻿using YourAcademy.DAL.Entity;
 using YourAcademy.DAL.UnitOfWork;
 using YourAcademy.Services.Interface;
 
@@ -21,6 +20,29 @@ namespace YourAcademy.Services.Services
                 _unitOfWork.BeginTransaction();
                 _unitOfWork.Courses.Add(course);
                 _unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
+            finally
+            {
+                _unitOfWork.Dispose();
+            }
+        }
+
+        public IList<Course> GetAllCourses()
+        {
+            try
+            {
+                _unitOfWork.BeginTransaction();
+
+                var courses = _unitOfWork.Courses.GetAll();
+
+                _unitOfWork.Commit();
+
+                return courses;
             }
             catch (Exception)
             {
