@@ -10,25 +10,18 @@ namespace YourAcademy.Services.Services
 
         public CourseService(IApplicationUnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+            _unitOfWork = unitOfWork;
         }
 
         public void AddCourse(Course course)
         {
             try
             {
-                _unitOfWork.BeginTransaction();
                 _unitOfWork.Courses.Add(course);
-                _unitOfWork.Commit();
             }
             catch (Exception)
             {
-                _unitOfWork.Rollback();
-                throw;
-            }
-            finally
-            {
-                _unitOfWork.Dispose();
+               throw;
             }
         }
 
@@ -36,22 +29,26 @@ namespace YourAcademy.Services.Services
         {
             try
             {
-                _unitOfWork.BeginTransaction();
-
                 var courses = _unitOfWork.Courses.GetAll();
-
-                _unitOfWork.Commit();
 
                 return courses;
             }
             catch (Exception)
             {
-                _unitOfWork.Rollback();
                 throw;
             }
-            finally
+        }
+
+        public Course GetCourse(Guid id)
+        {
+            try
             {
-                _unitOfWork.Dispose();
+                var course = _unitOfWork.Courses.GetById(id);
+                return course;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

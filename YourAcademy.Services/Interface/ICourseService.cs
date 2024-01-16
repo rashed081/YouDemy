@@ -7,5 +7,6 @@ namespace YourAcademy.Services.Interface
 
         void AddCourse(Course course);
         IList<Course> GetAllCourses();
+        Course GetCourse(Guid id);
     }
 }

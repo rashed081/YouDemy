@@ -15,19 +15,11 @@ builder.Services.AddControllersWithViews();
 builder.Logging.ClearProviders();
 builder.Logging.AddLog4Net();
 
-//Autofac Configured
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
-{
-    containerBuilder.RegisterModule(new WebModule());
-    containerBuilder.RegisterModule(new DataAccessModule());
-    containerBuilder.RegisterModule(new ServiceModule());
-});
+
 var log = LogManager.GetLogger(typeof(Program));
 
 try
 {
-    // Configure NHibernate
     builder.Services.AddSingleton(provider =>
     {
         var nhHelper = provider.GetRequiredService<INHibernateHelper>();
@@ -39,12 +31,16 @@ try
         var sessionFactory = provider.GetRequiredService<ISessionFactory>();
         return sessionFactory.OpenSession();
     });
-
+    //Autofac Configured
+    builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+    builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+    {
+        containerBuilder.RegisterModule(new WebModule());
+        containerBuilder.RegisterModule(new DataAccessModule());
+        containerBuilder.RegisterModule(new ServiceModule());
+    });
     var app = builder.Build();
     
-    
-
-
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())
     {
@@ -57,7 +53,7 @@ try
 
     app.UseRouting();
 
-    app.UseMiddleware<NHibernateMiddleware>();
+    //app.UseMiddleware<NHibernateMiddleware>();
     app.UseAuthorization();
 
     app.MapControllerRoute(

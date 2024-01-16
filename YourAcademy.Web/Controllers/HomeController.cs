@@ -21,6 +21,7 @@ namespace YourAcademy.Controllers
         public IActionResult Index()
         {
             var model = _scope.Resolve<CourseViewModel>();
+            model.LoadCourses();
             return View(model);
         }
 

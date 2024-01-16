@@ -4,9 +4,8 @@ namespace YourAcademy.DAL
 {
     public interface INHibernateHelper
     {
-        public ISessionFactory SessionFactory { get;}
-        ISession OpenSession();
+        ISessionFactory SessionFactory { get; }
 
-        void InitializeSessionFactory();
+        ISession OpenSession();
     }
 }

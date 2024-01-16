@@ -1,14 +1,14 @@
-﻿using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
+﻿using FluentNHibernate.Cfg.Db;
+using FluentNHibernate.Cfg;
 using NHibernate;
-using NHibernate.Tool.hbm2ddl;
 using YourAcademy.DAL.MappingFiles;
+using NHibernate.Tool.hbm2ddl;
 
-namespace YourAcademy.DAL 
+namespace YourAcademy.DAL
 {
     public class NHibernateHelper : INHibernateHelper
     {
-        private ISessionFactory _sessionFactory;
+        private static ISessionFactory _sessionFactory;
 
         public ISessionFactory SessionFactory
         {
@@ -21,6 +21,7 @@ namespace YourAcademy.DAL
                 return _sessionFactory;
             }
         }
+
         public ISession OpenSession()
         {
             return SessionFactory.OpenSession();
@@ -37,4 +38,3 @@ namespace YourAcademy.DAL
         }
     }
 }
-

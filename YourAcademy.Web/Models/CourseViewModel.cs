@@ -5,25 +5,23 @@ namespace YourAcademy.Web.Models
 {
     public class CourseViewModel
     {
-        public Guid Id { get; set; }
-        public string? Title { get; set; }
-        public string? Description { get; set; }
-        public float Price { get; set; }
-        public string? Instructor { get; set; }
-        public string? Image { get; set; }
-        public decimal Rating { get; set; }
-        public readonly ICourseService _service;
+        public IEnumerable<Course> Courses { get; set; }
 
-        public CourseViewModel()
-        { }
+        private readonly ICourseService _service;
+
+
         public CourseViewModel(ICourseService service)
         {
             _service = service;
         }
 
-        public IList<Course> GetCourses()
+        public CourseViewModel()
         {
-            return _service.GetAllCourses();
+        }
+
+        public void LoadCourses()
+        {
+            Courses = _service.GetAllCourses();
         }
 
     }

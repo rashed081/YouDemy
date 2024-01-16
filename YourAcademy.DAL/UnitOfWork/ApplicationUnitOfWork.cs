@@ -12,7 +12,7 @@ namespace YourAcademy.DAL.UnitOfWork
 
         public ApplicationUnitOfWork(ISession session, ICourseRepository course)
         {
-            _session = session ?? throw new ArgumentNullException(nameof(session));
+            _session = session;
             Courses = course;
         }
         public void BeginTransaction()

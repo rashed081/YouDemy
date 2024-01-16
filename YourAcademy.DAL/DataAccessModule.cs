@@ -10,6 +10,7 @@ namespace YourAcademy.DAL
         public DataAccessModule()
         { }
 
+
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<CourseRepository>().As<ICourseRepository>()
@@ -18,9 +19,8 @@ namespace YourAcademy.DAL
             builder.RegisterType<ApplicationUnitOfWork>().As<IApplicationUnitOfWork>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<NHibernateHelper>().As<INHibernateHelper>()
-                .SingleInstance();
-
+            builder.RegisterType<NHibernateHelper>().As<INHibernateHelper>().SingleInstance();
+            
             //builder.RegisterType<NHibernateMiddleware>();
 
             base.Load(builder);

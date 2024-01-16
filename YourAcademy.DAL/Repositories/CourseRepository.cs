@@ -6,8 +6,7 @@ namespace YourAcademy.DAL.Repositories
 {
     public class CourseRepository : Repository<Course, Guid>, ICourseRepository
     {
-        public CourseRepository(ISession session) : base(session)
-        {
-        }
+      public CourseRepository(INHibernateHelper nHibernateHelper) :base(nHibernateHelper) { }
+        
     }
 }
