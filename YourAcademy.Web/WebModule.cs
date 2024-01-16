@@ -11,6 +11,7 @@ namespace YourAcademy
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<CourseViewModel>().AsSelf();
+            builder.RegisterType<CourseCreateModel>().AsSelf();
 
             base.Load(builder);
         }
