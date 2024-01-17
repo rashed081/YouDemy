@@ -1,5 +1,4 @@
-﻿using NHibernate;
-using YourAcademy.DAL.Entity;
+﻿using YourAcademy.DAL.Entity;
 using YourAcademy.DAL.RepositoryInterface;
 
 namespace YourAcademy.DAL.Repositories

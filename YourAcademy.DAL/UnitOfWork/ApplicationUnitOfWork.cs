@@ -9,11 +9,14 @@ namespace YourAcademy.DAL.UnitOfWork
         private ITransaction? _transaction;
 
         public ICourseRepository Courses { get; private set; }
+        public ICategoryRepository Categories { get; private set; }
 
-        public ApplicationUnitOfWork(ISession session, ICourseRepository course)
+        public ApplicationUnitOfWork(ISession session, ICourseRepository course, ICategoryRepository categories)
         {
             _session = session;
             Courses = course;
+            Categories = categories;
+
         }
         public void BeginTransaction()
         {

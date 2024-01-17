@@ -13,6 +13,9 @@ namespace YourAcademy.Service
         {
             builder.RegisterType<CourseService>().As<ICourseService>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<CategoryService>().As<ICategoryService>()
+                .InstancePerLifetimeScope();
             base.Load(builder);
         }
     }

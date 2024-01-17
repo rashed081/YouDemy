@@ -1,0 +1,30 @@
+﻿@model YourAcademy.Web.Areas.Admin.Models.CategoryModel
+
+@{
+    ViewData["Title"] = "Add Category";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Create Category</h3>
+                </div>
+                <form role="form" asp-antiforgery="true" asp-action="Create"
+                      asp-area="Admin" asp-controller="Category" method="post">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label asp-for="Title"></label>
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Enter title">
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Add Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

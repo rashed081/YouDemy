@@ -1,7 +1,5 @@
 ﻿using Autofac;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 using System.Diagnostics;
 using YourAcademy.Models;
 using YourAcademy.Web.Models;
@@ -29,6 +27,7 @@ namespace YourAcademy.Controllers
         public IActionResult Create()
         {
             var model = _scope.Resolve<CourseCreateModel>();
+            model.LoadCategories();
             return View(model);
         }
 
@@ -37,17 +36,13 @@ namespace YourAcademy.Controllers
         public IActionResult Create(CourseCreateModel model)
         {
             model.ResolveDependency(_scope);
-
+            model.LoadCategories();
             if (ModelState.IsValid)
             {
                 try
                 {
                     model.CreateCourse();
                     return RedirectToAction("Index");
-                }
-                catch (DuplicateNameException ex)
-                {
-                    _logger.LogError(ex, ex.Message);
                 }
                 catch (Exception e)
                 {

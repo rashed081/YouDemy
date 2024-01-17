@@ -1,4 +1,6 @@
-﻿namespace YourAcademy.DAL.Entity
+﻿using YourAcademy.DAL.Enums;
+
+namespace YourAcademy.DAL.Entity
 {
     public class Course:IEntity<Guid>
     {
@@ -9,5 +11,8 @@
         public virtual string? Instructor { get; set; }
         public virtual string? Image { get; set; }
         public virtual decimal Rating { get; set; }
+        public virtual DifficultyLevel DifficultyLevel { get; set; }
+        public virtual string CategoryId { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

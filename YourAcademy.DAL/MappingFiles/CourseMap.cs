@@ -1,5 +1,6 @@
 ﻿using FluentNHibernate.Mapping;
 using YourAcademy.DAL.Entity;
+using YourAcademy.DAL.Enums;
 
 namespace YourAcademy.DAL.MappingFiles
 {
@@ -14,6 +15,9 @@ namespace YourAcademy.DAL.MappingFiles
             Map(x => x.Image);
             Map(x => x.Instructor);
             Map(x => x.Rating);
+            //Map(x => x.CategoryId);
+            Map(x => x.DifficultyLevel).CustomType<DifficultyLevel>().Column("difficulty").Not.Nullable();
+            References(x => x.Category).Column("CategoryId");
             Table("Course");
         }
     }

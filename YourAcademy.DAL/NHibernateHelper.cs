@@ -33,7 +33,8 @@ namespace YourAcademy.DAL
                  .Database(MsSqlConfiguration.MsSql2012.ConnectionString("Server= DESKTOP-SFPAGI6\\SQL16;Database=YourAcademyDb;User Id=sa;Password=1234;"))
                  .CurrentSessionContext<NHibernate.Context.WebSessionContext>()
                  .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CourseMap>())
-                 .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
+                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CategoryMap>())
+                 //.ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
                  .BuildSessionFactory();
         }
     }
