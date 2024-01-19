@@ -34,6 +34,8 @@ namespace YourAcademy.DAL
                  .CurrentSessionContext<NHibernate.Context.WebSessionContext>()
                  .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CourseMap>())
                  .Mappings(m => m.FluentMappings.AddFromAssemblyOf<CategoryMap>())
+                 .Mappings(m=> m.FluentMappings.AddFromAssemblyOf<CartMap>())
+                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<OrderMap>())
                  //.ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
                  .BuildSessionFactory();
         }

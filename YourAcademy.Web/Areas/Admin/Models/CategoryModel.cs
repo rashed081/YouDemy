@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using System.ComponentModel.DataAnnotations;
 using YourAcademy.DAL.Entity;
 using YourAcademy.Services.Interface;
 
@@ -7,16 +8,13 @@ namespace YourAcademy.Web.Areas.Admin.Models
     public class CategoryModel
     {
         public Guid Id { get; set; }
+        [Required]
         public string? Title { get; set; }
-        public IEnumerable<Category> Categories { get; set; }
 
-
+        public IEnumerable<Category> Categories;
         private ICategoryService _categoryService;
 
-        public CategoryModel()
-        {
-
-        }
+        public CategoryModel(){}
 
         public CategoryModel(ICategoryService CategoryService)
         {

@@ -1,13 +1,6 @@
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\bin\Debug\net6.0\YourAcademy.DAL.deps.json
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\bin\Debug\net6.0\YourAcademy.DAL.dll
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\bin\Debug\net6.0\YourAcademy.DAL.pdb
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.csproj.AssemblyReference.cache
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.GeneratedMSBuildEditorConfig.editorconfig
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.AssemblyInfoInputs.cache
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.AssemblyInfo.cs
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.csproj.CoreCompileInputs.cache
 D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.sourcelink.json
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.dll
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\refint\YourAcademy.DAL.dll
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\YourAcademy.DAL.pdb
-D:\Onnorokom Project\YourAcademy\YourAcademy.DAL\obj\Debug\net6.0\ref\YourAcademy.DAL.dll
