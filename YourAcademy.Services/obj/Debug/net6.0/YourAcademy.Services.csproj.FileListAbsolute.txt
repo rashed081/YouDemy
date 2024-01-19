@@ -1,6 +1,0 @@
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.csproj.AssemblyReference.cache
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.GeneratedMSBuildEditorConfig.editorconfig
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.AssemblyInfoInputs.cache
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.AssemblyInfo.cs
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.csproj.CoreCompileInputs.cache
-D:\Onnorokom Project\YourAcademy\YourAcademy.Services\obj\Debug\net6.0\YourAcademy.Services.sourcelink.json
